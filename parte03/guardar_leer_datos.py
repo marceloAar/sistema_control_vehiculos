@@ -5,13 +5,13 @@ from parte02.carga import Carga
 from parte02.motocicleta import Motocicleta
 from parte02.particular import Particular
 
-def guardar_datos_csv(vehiculos, nombre_archivo="./sistema_control_vehiculos/vehiculos.csv"):
+def guardar_datos_csv(vehiculos, nombre_archivo="vehiculos.csv"):
     with open(nombre_archivo, "w", newline='') as archivo:
         archivo_csv = csv.writer(archivo)
         for vehiculo in vehiculos:
             archivo_csv.writerow([vehiculo.__class__, vehiculo.__dict__])
 
-def leer_datos_csv(nombre_archivo="./sistema_control_vehiculos/vehiculos.csv"):
+def leer_datos_csv(nombre_archivo="vehiculos.csv"):
     with open(nombre_archivo, "r") as archivo:
         archivo_csv = csv.reader(archivo)
         for fila in archivo_csv:
